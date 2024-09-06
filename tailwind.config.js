@@ -6,6 +6,6 @@ export default {
    },
    plugins: [require("daisyui")],
    daisyui: {
-      themes: ["light", "dark", "cyberpunk", "aqua", "synthwave"],
+      themes: ["light", "dark", "cyberpunk", "aqua", "synthwave", "forest"],
    },
 };
