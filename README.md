@@ -1,8 +1,33 @@
-# React + Vite
+# Github-Finder Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Made this React Project Using Vite + Tailwind + DaisyUI:
 
-Currently, two official plugins are available:
+### Available Scripts
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+#### `npm run dev`
+
+-  Runs the app in the development mode.
+
+#### `npm run build`
+
+-  Builds the app for Production
+
+## Flow Of Creation of GithubFinder App:
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': { 'fontSize': '18px', 'fontFamily': 'Algerian' , 'primaryBorderColor': 'blue' , 'background' : 'purple', 'mainBkg': 'pink'}}}%%
+flowchart TD
+   1[\Project Starting/]
+   -.-> 2[Added Dependencies - Tailwind Css, DaisyUi ]
+   -.-> 3[Navbar Component]
+   -.-> 4[Footer Component]
+   -.-> 5
+    5(Routes and Pages Creation) --> B
+    B{{ }}
+    B --> C{{ }}
+     --> D( )
+     --> E( )
+     --> F{{ }}
+     --> G[ ]
+     --> M( )
+```
