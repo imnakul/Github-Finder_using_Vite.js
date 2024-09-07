@@ -1,4 +1,6 @@
-# Github-Finder Project: It's a react project to find and show Github profile of users.
+# Github-Finder Project:
+
+-  It's a react project to find and show Github profile of users.
 
 ## Made this React Project Using Vite + Tailwind + DaisyUI:
 
