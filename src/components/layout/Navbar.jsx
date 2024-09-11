@@ -17,13 +17,13 @@ function Navbar({ title }) {
                <div className='flex justify-end gap-4'>
                   <Link
                      to='/'
-                     className='btn btn-ghost hover:bg-primary hover:text-black focus:bg-primary focus:text-black text-lg px-6 py-2 rounded-md'
+                     className='btn btn-ghost hover:bg-neutral  focus:bg-primary focus:text-black hover:ring-green-300 hover:border-primary hover:ring-2 focus:outline-none text-lg px-6 py-2 rounded-md'
                   >
                      Home
                   </Link>
                   <Link
                      to='/about'
-                     className='btn btn-ghost hover:bg-primary hover:text-black focus:bg-primary focus:text-black text-lg px-6 py-2 rounded-md'
+                     className='btn btn-ghost hover:bg-neutral focus:bg-primary focus:text-black hover:ring-green-300 hover:ring-2 text-lg px-6 py-2 rounded-md'
                   >
                      About
                   </Link>
