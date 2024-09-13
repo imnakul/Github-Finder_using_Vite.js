@@ -5,17 +5,18 @@ import { MdPersonSearch } from "react-icons/md";
 function UserSearch() {
    const [text, setText] = useState(" ");
 
-   const { users } = useContext(GithubContext);
+   const { users, searchUsers } = useContext(GithubContext);
 
    const handleChange = (e) => setText(e.target.value);
 
    const handleSubmit = (e) => {
       e.preventDefault();
-      if (text === " ") {
-         window.alert("Cannot be empty");
+      if (/^[\s\W]*$/.test(text)) {
+         window.alert(
+            "Put some meaningful text! \nCannot be empty! \nShould contain some Alphanumeric character!"
+         );
       } else {
-         //@todo - search users
-
+         searchUsers(text);
          setText(" ");
       }
    };
@@ -26,11 +27,6 @@ function UserSearch() {
             <form onSubmit={handleSubmit}>
                <div className='form-control'>
                   <div className='relative'>
-                     {/* <input
-                        type='text'
-                        className='w-full pr-40 bg-gray-200 input input-lg text-black'
-                        placeholder='Search'
-                     /> */}
                      <input
                         type='text'
                         className='bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pr-40 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-300 dark:focus:border-primary focus:ring-2 input focus:outline-none input-lg'
@@ -38,20 +34,6 @@ function UserSearch() {
                         value={text}
                         onChange={handleChange}
                      />
-
-                     {/* <button
-                        type='submit'
-                        className='absolute top-0 right-0 bg-gray-700 rounded-sm w-36 btn btn-lg hover:bg-primary hover:text-black focus:bg-primary focus:text-black text-lg'
-                     >
-                        Go
-                     </button> */}
-
-                     {/* <button
-                        type='submit'
-                        className='absolute top-0 right-0 py-3 px-6 rounded-sm w-36 btn btn-lg bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold hover:from-blue-600 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-400 transition-all duration-300'
-                     >
-                        GO
-                     </button> */}
 
                      <button
                         type='submit'
