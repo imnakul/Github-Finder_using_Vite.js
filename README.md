@@ -26,10 +26,15 @@ flowchart TD
    -.-> 5
     5(Routes and Pages Creation) --> B
     B{{User List Component - where our output of request will be }}
-    B --> C{{ }}
-     --> D( )
-     --> E( )
-     --> F{{ }}
-     --> G[ ]
+    B --> C{{Display users }}
+     --> D( Setup GIthubContext)
+     --> E(Reducers and usereducers hook )
+     --> F{{User sEarch component complete with Clear Button working }}
+     --> G[AlertContext and Alert Provider ]
      --> M( )
+     --> N( )
+     --> O( )
+     --> P( )
+     --> Q( )
+
 ```
