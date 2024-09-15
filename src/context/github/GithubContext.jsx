@@ -9,10 +9,29 @@ const GITHUB_TOKEN = "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";
 export const GithubProvider = ({ children }) => {
    const intitalState = {
       users: [],
+      user: {},
       loading: false,
    };
 
    const [state, dispatch] = useReducer(githubReducer, intitalState);
+
+   //Search single user
+   const getUser = async (login) => {
+      setLoading();
+
+      const response = await fetch(`${GITHUB_URL}/users/${login}`, {
+         headers: {
+            Authorization: GITHUB_TOKEN,
+         },
+      });
+
+      if (response.status === 400) {
+         window.location = "/notfound";
+      } else {
+         const data = await response.json();
+         dispatch({ type: "GET_USER", payload: data });
+      }
+   };
 
    // Get search results
    const searchUsers = async (text) => {
@@ -50,6 +69,8 @@ export const GithubProvider = ({ children }) => {
             loading: state.loading,
             searchUsers,
             clearUsers,
+            user: state.user,
+            getUser,
          }}
       >
          {children}
