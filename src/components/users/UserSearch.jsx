@@ -1,19 +1,23 @@
 import { useState, useContext } from "react";
 import GithubContext from "../../context/github/GithubContext";
 import { MdPersonSearch } from "react-icons/md";
+import AlertContext from "../../context/alert/AlertContext";
 
 function UserSearch() {
    const [text, setText] = useState(" ");
 
    const { users, searchUsers, clearUsers } = useContext(GithubContext);
+   const { setAlert } = useContext(AlertContext);
 
    const handleChange = (e) => setText(e.target.value);
 
    const handleSubmit = (e) => {
       e.preventDefault();
+
       if (/^[\s\W]*$/.test(text)) {
-         window.alert(
-            "Put some meaningful text! \nCannot be empty! \nShould contain some Alphanumeric character!"
+         setAlert(
+            "Put some meaningful text! \nCannot be empty! \nShould contain some Alphanumeric character!",
+            "error"
          );
       } else {
          searchUsers(text);
@@ -37,8 +41,8 @@ function UserSearch() {
 
                      <button
                         type='submit'
-                        className='absolute w-24 top-1.5 right-2  rounded-sm btn btn-md dark:bg-gray-700 
-                        dark:border-gray-700 hover:outline-none hover:bg-transparent hover:ring-2 hover:ring-green-200
+                        className='absolute w-20 top-1.5 right-2  rounded-sm btn btn-md dark:bg-gray-700 
+                        dark:border-gray-700 hover:outline-none hover:ring-orange-300 hover:bg-transparent hover:ring-2 
                         '
                      >
                         <MdPersonSearch className='absolute  text-primary inline p-2 text-6xl' />
