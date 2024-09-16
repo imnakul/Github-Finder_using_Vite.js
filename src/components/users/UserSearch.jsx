@@ -55,7 +55,7 @@ function UserSearch() {
             <div>
                <button
                   onClick={clearUsers}
-                  className='btn btn-ghost btn-lg rounded-sm w-36 hover:bg-red-500 hover:text-black focus:bg-red-500 focus:text-black text-lg'
+                  className='btn btn-ghost btn-lg rounded-lg w-36 hover:outline-none hover:ring-red-300 hover:bg-red-500 hover:bg-opacity-70 hover:ring-2 focus:bg-red-500 text-lg'
                >
                   Clear
                </button>

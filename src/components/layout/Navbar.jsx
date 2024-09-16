@@ -18,19 +18,19 @@ function Navbar({ title }) {
                <div className='flex justify-end gap-4'>
                   <Link
                      to='/'
-                     className='btn btn-ghost hover:bg-neutral  focus:bg-primary focus:text-black hover:ring-green-300 hover:border-primary hover:ring-2 focus:outline-none text-lg px-6 py-2 rounded-md'
+                     className='btn btn-ghost hover:bg-neutral  focus:bg-primary focus:text-black hover:ring-green-300 hover:border-primary hover:ring-2 focus:outline-none text-xl px-6 py-2 rounded-md'
                   >
                      Home
                   </Link>
                   <Link
                      to='/about'
-                     className='btn btn-ghost hover:bg-neutral focus:bg-primary focus:text-black hover:ring-green-300 hover:ring-2 text-lg px-6 py-2 rounded-md'
+                     className='btn btn-ghost hover:bg-neutral focus:bg-primary focus:text-black hover:ring-green-300 hover:ring-2 text-xl px-6 py-2 rounded-md'
                   >
                      About
                   </Link>
 
                   <Menu as='div' className='relative inline-block text-left'>
-                     <MenuButton className='btn btn-ghost hover:bg-neutral focus:bg-primary focus:text-black hover:ring-green-300 hover:ring-2 text-lg px-6 py-2 rounded-md'>
+                     <MenuButton className='btn btn-ghost hover:bg-neutral focus:bg-primary focus:text-black hover:ring-green-300 hover:ring-2 text-xl px-6 py-2 rounded-md'>
                         Themes
                      </MenuButton>
 
@@ -40,39 +40,146 @@ function Navbar({ title }) {
                      >
                         <div className='py-1'>
                            <MenuItem>
-                              <a
-                                 href='#'
-                                 className='block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-blue-400 data-[hover]:bg-blue-500 data-[focus]:text-gray-900'
+                              <Link
+                                 onClick={() =>
+                                    document
+                                       .querySelector("html")
+                                       .setAttribute("data-theme", "aqua")
+                                 }
+                                 className='block px-4 py-2 text-md text-gray-700 data-[focus]:bg-blue-400 data-[hover]:bg-blue-500 data-[focus]:text-gray-900 hover:shadow-lg'
                               >
                                  Aqua
-                              </a>
+                              </Link>
                            </MenuItem>
+
                            <MenuItem>
-                              <a
-                                 href='#'
-                                 className='block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-blue-700 data-[hover]:to-blue-950 data-[focus]:text-gray-900'
+                              <Link
+                                 onClick={() =>
+                                    document
+                                       .querySelector("html")
+                                       .setAttribute("data-theme", "retro")
+                                 }
+                                 className='block px-4 py-2 text-md text-gray-700 data-[focus]:bg-orange-300 data-[hover]:bg-orange-300 data-[focus]:text-gray-900 hover:shadow-lg'
+                              >
+                                 Retro
+                              </Link>
+                           </MenuItem>
+
+                           <MenuItem>
+                              <Link
+                                 onClick={() =>
+                                    document
+                                       .querySelector("html")
+                                       .setAttribute("data-theme", "luxury")
+                                 }
+                                 className='block px-4 py-2 text-md text-gray-700 data-[focus]:bg-red-900 data-[hover]:bg-red-900 data-[focus]:text-gray-900 hover:shadow-lg'
+                              >
+                                 Luxury
+                              </Link>
+                           </MenuItem>
+
+                           <MenuItem>
+                              <Link
+                                 onClick={() =>
+                                    document
+                                       .querySelector("html")
+                                       .setAttribute("data-theme", "valentine")
+                                 }
+                                 className='block px-4 py-2 text-md text-gray-700 data-[focus]:bg-pink-400 data-[hover]:bg-pink-400 data-[focus]:text-gray-900 hover:shadow-lg'
+                              >
+                                 Valentine
+                              </Link>
+                           </MenuItem>
+
+                           <MenuItem>
+                              <Link
+                                 onClick={() =>
+                                    document
+                                       .querySelector("html")
+                                       .setAttribute("data-theme", "lemonade")
+                                 }
+                                 className='block px-4 py-2 text-md text-gray-700 data-[focus]:bg-yellow-200 data-[hover]:bg-yellow-200 data-[focus]:text-gray-900 hover:shadow-lg'
+                              >
+                                 Lemonade
+                              </Link>
+                           </MenuItem>
+
+                           <MenuItem>
+                              <Link
+                                 onClick={() =>
+                                    document
+                                       .querySelector("html")
+                                       .setAttribute("data-theme", "dim")
+                                 }
+                                 className='block px-4 py-2 text-md text-gray-700 data-[focus]:bg-blue-800 data-[hover]:bg-blue-800 data-[focus]:text-gray-900 hover:shadow-lg'
+                              >
+                                 Dim
+                              </Link>
+                           </MenuItem>
+
+                           <MenuItem>
+                              <Link
+                                 onClick={() =>
+                                    document
+                                       .querySelector("html")
+                                       .setAttribute("data-theme", "light")
+                                 }
+                                 className='block px-4 py-2 text-md text-gray-700 data-[focus]:bg-white data-[hover]:bg-white hover:text-black data-[focus]:text-gray-900 hover:shadow-lg'
+                              >
+                                 Light
+                              </Link>
+                           </MenuItem>
+
+                           <MenuItem>
+                              <Link
+                                 onClick={() =>
+                                    document
+                                       .querySelector("html")
+                                       .setAttribute("data-theme", "dark")
+                                 }
+                                 className='block px-4 py-2 text-md text-gray-700 data-[focus]:bg-gray-700 [hover]:bg-gray-700 data-[focus]:text-gray-900 hover:shadow-lg'
+                              >
+                                 Dark
+                              </Link>
+                           </MenuItem>
+
+                           <MenuItem>
+                              <Link
+                                 onClick={() =>
+                                    document
+                                       .querySelector("html")
+                                       .setAttribute("data-theme", "synthwave")
+                                 }
+                                 className='block px-4 py-2 text-md text-gray-700 data-[focus]:bg-blue-700 data-[hover]:to-blue-950 data-[focus]:text-gray-900'
                               >
                                  Synthwave
-                              </a>
+                              </Link>
                            </MenuItem>
                            <MenuItem>
-                              <a
-                                 href='#'
-                                 className='block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-green-700 data-[hover]:bg-green-700 data-[focus]:text-gray-900'
+                              <Link
+                                 onClick={() =>
+                                    document
+                                       .querySelector("html")
+                                       .setAttribute("data-theme", "forest")
+                                 }
+                                 className='block px-4 py-2 text-md text-gray-700 data-[focus]:bg-green-700 data-[hover]:bg-green-700 data-[focus]:text-gray-900'
                               >
                                  Forest
-                              </a>
+                              </Link>
                            </MenuItem>
-                           <form action='#' method='POST'>
-                              <MenuItem>
-                                 <button
-                                    type='submit'
-                                    className='block w-full px-4 py-2 text-left text-sm text-gray-700 data-[focus]:bg-yellow-300 data-[hover]:bg-yellow-300 data-[focus]:text-gray-900'
-                                 >
-                                    Cyberpunk
-                                 </button>
-                              </MenuItem>
-                           </form>
+
+                           <MenuItem>
+                              <Link
+                                 onClick={() =>
+                                    document
+                                       .querySelector("html")
+                                       .setAttribute("data-theme", "cyberpunk")
+                                 }
+                                 className='block w-full px-4 py-2 text-left text-md text-gray-700 data-[focus]:bg-yellow-300 data-[hover]:bg-yellow-300 data-[focus]:text-gray-900'
+                              >
+                                 Cyberpunk
+                              </Link>
+                           </MenuItem>
                         </div>
                      </MenuItems>
                   </Menu>
