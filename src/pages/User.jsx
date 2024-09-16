@@ -9,6 +9,10 @@ function User() {
       getUser(params.login);
    }, []);
 
-   return <div>{user.login}</div>;
+   return (
+      <div>
+         <img src={user.avatar_url} alt='Profile' />
+      </div>
+   );
 }
 export default User;

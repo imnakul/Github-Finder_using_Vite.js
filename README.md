@@ -31,8 +31,8 @@ flowchart TD
      --> E(Reducers and usereducers hook )
      --> F{{User sEarch component complete with Clear Button working }}
      --> G[AlertContext and Alert Provider ]
-     --> M( )
-     --> N( )
+     --> M(SingleUserFetching & Designing Page for that )
+     --> N(Added Theme options in navbar - working left  )
      --> O( )
      --> P( )
      --> Q( )
