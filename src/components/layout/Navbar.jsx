@@ -8,8 +8,8 @@ function Navbar({ title }) {
       <nav className='navbar mb-12 p-7 shadow-lg bg-neutral text-neutral-content text-16'>
          <div className='container mx-auto'>
             <div className='flex-none px-2 mx-2'>
-               <FaGithub className='text-primary inline pr-2 text-6xl' />
-               <Link to='/' className='text-5xl font-bold align-middle ml-2'>
+               <FaGithub className='text-primary inline pr-2 text-5xl' />
+               <Link to='/' className='text-4xl font-bold align-middle ml-2'>
                   {title}
                </Link>
             </div>
@@ -18,19 +18,19 @@ function Navbar({ title }) {
                <div className='flex justify-end gap-4'>
                   <Link
                      to='/'
-                     className='btn btn-ghost hover:bg-neutral  focus:bg-primary focus:text-black hover:ring-green-300 hover:border-primary hover:ring-2 focus:outline-none text-xl px-6 py-2 rounded-md'
+                     className='btn btn-ghost hover:bg-neutral  focus:bg-primary focus:text-black hover:ring-green-300 hover:border-primary hover:ring-2 focus:outline-none text-lg px-6 py-2 rounded-md'
                   >
                      Home
                   </Link>
                   <Link
                      to='/about'
-                     className='btn btn-ghost hover:bg-neutral focus:bg-primary focus:text-black hover:ring-green-300 hover:ring-2 text-xl px-6 py-2 rounded-md'
+                     className='btn btn-ghost hover:bg-neutral focus:bg-primary focus:text-black hover:ring-green-300 hover:ring-2 text-lg px-6 py-2 rounded-md'
                   >
                      About
                   </Link>
 
                   <Menu as='div' className='relative inline-block text-left'>
-                     <MenuButton className='btn btn-ghost hover:bg-neutral focus:bg-primary focus:text-black hover:ring-green-300 hover:ring-2 text-xl px-6 py-2 rounded-md'>
+                     <MenuButton className='btn btn-ghost hover:bg-neutral focus:bg-primary focus:text-black hover:ring-green-300 hover:ring-2 text-lg px-6 py-2 rounded-md'>
                         Themes
                      </MenuButton>
 
