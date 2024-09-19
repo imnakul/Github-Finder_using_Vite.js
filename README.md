@@ -33,8 +33,8 @@ flowchart TD
      --> G[AlertContext and Alert Provider ]
      --> M(SingleUserFetching & Designing Page for that )
      --> N(Added Theme options in navbar - working left  )
-     --> O( )
-     --> P( )
-     --> Q( )
+     --> O(User Details Showing Updated )
+     --> P(GettingUsersRepos )
+     --> Q[ProjectDoneHereFunctionalityWise]
 
 ```
