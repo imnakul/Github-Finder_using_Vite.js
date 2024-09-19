@@ -10,6 +10,7 @@ export const GithubProvider = ({ children }) => {
    const intitalState = {
       users: [],
       user: {},
+      repos: [],
       loading: false,
    };
 
@@ -31,6 +32,31 @@ export const GithubProvider = ({ children }) => {
          const data = await response.json();
          dispatch({ type: "GET_USER", payload: data });
       }
+   };
+
+   //Get User Repos
+   const getUserRepos = async (login) => {
+      setLoading();
+
+      const params = new URLSearchParams({
+         sort: "created",
+         per_page: 10,
+      });
+
+      const response = await fetch(
+         `${GITHUB_URL}/users/${login}/repos?${params}`,
+         {
+            headers: {
+               Authorization: GITHUB_TOKEN,
+            },
+         }
+      );
+
+      const data = await response.json();
+      dispatch({ type: "GET_REPOS", payload: data });
+      // if (items.length === 0) { //maybe later add if 404 error for no repos found add that status.
+      //    window.alert("No Repos Found!");
+      // }
    };
 
    // Get search results
@@ -67,10 +93,12 @@ export const GithubProvider = ({ children }) => {
          value={{
             users: state.users,
             loading: state.loading,
+            repos: state.repos,
             searchUsers,
             clearUsers,
             user: state.user,
             getUser,
+            getUserRepos,
          }}
       >
          {children}
