@@ -2,16 +2,17 @@ import { useState, useContext } from "react";
 import GithubContext from "../../context/github/GithubContext";
 import { MdPersonSearch } from "react-icons/md";
 import AlertContext from "../../context/alert/AlertContext";
+import { searchUsers } from "../../context/github/GithubActions";
 
 function UserSearch() {
    const [text, setText] = useState(" ");
 
-   const { users, searchUsers, clearUsers } = useContext(GithubContext);
+   const { users, clearUsers, dispatch } = useContext(GithubContext);
    const { setAlert } = useContext(AlertContext);
 
    const handleChange = (e) => setText(e.target.value);
 
-   const handleSubmit = (e) => {
+   const handleSubmit = async (e) => {
       e.preventDefault();
 
       if (/^[\s\W]*$/.test(text)) {
@@ -20,7 +21,9 @@ function UserSearch() {
             "error"
          );
       } else {
-         searchUsers(text);
+         dispatch({ type: "SET_LOADING" });
+         const users = await searchUsers(text);
+         dispatch({ type: "GET_USERS", payload: users });
          setText(" ");
       }
    };

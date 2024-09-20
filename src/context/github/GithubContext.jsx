@@ -59,27 +59,6 @@ export const GithubProvider = ({ children }) => {
       // }
    };
 
-   // Get search results
-   const searchUsers = async (text) => {
-      setLoading();
-      const params = new URLSearchParams({
-         q: text,
-      });
-
-      const response = await fetch(`${GITHUB_URL}/search/users?${params}`, {
-         headers: {
-            Authorization: GITHUB_TOKEN,
-         },
-      });
-
-      const { items } = await response.json();
-      //earlier we were just using data to store response in json format , but with new url we want items array only from response, so destructuring it into items array
-      dispatch({ type: "GET_USERS", payload: items });
-      if (items.length === 0) {
-         window.alert("No Users Found!");
-      }
-   };
-
    //Clear UserResult
    const clearUsers = () => {
       dispatch({ type: "CLEAR_USERS" });
@@ -91,12 +70,9 @@ export const GithubProvider = ({ children }) => {
    return (
       <GithubContext.Provider
          value={{
-            users: state.users,
-            loading: state.loading,
-            repos: state.repos,
-            searchUsers,
+            ...state,
+            dispatch,
             clearUsers,
-            user: state.user,
             getUser,
             getUserRepos,
          }}

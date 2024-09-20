@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 
-function Navbar({ title }) {
+function Navbar({ title = "Github-Finder" }) {
    return (
       <nav className='navbar mb-12 p-7 shadow-lg bg-neutral text-neutral-content text-16'>
          <div className='container mx-auto'>
@@ -190,11 +190,7 @@ function Navbar({ title }) {
    );
 }
 
-Navbar.defaultProps = {
-   title: "Github-Finder",
-};
-
-Navbar.PropTypes = {
+Navbar.propTypes = {
    title: PropTypes.string,
 };
 
