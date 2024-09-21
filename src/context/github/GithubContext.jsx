@@ -3,8 +3,6 @@ import { useReducer } from "react";
 import githubReducer from "./GithubReducer";
 
 const GithubContext = createContext();
-const GITHUB_URL = "https://api.github.com";
-const GITHUB_TOKEN = "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";
 
 export const GithubProvider = ({ children }) => {
    const intitalState = {
@@ -59,22 +57,11 @@ export const GithubProvider = ({ children }) => {
       // }
    };
 
-   //Clear UserResult
-   const clearUsers = () => {
-      dispatch({ type: "CLEAR_USERS" });
-   };
-
-   //Set loading
-   const setLoading = () => dispatch({ type: "SET_LOADING" });
-
    return (
       <GithubContext.Provider
          value={{
             ...state,
             dispatch,
-            clearUsers,
-            getUser,
-            getUserRepos,
          }}
       >
          {children}
