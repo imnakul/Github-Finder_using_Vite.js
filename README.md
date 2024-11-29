@@ -81,7 +81,6 @@ Run the test suite using the following command:
 ❯ npm test
 ```
 
-
 ---
 ##  Project Roadmap
 
@@ -106,12 +105,6 @@ Run the test suite using the following command:
    </a>
 </p>
 </details>
-
----
-
-##  Acknowledgments
-
-- List any resources, contributors, inspiration, etc. here.
 
 ---
 
