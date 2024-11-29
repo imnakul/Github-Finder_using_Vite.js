@@ -1,18 +1,8 @@
-# Github-Finder Project:
+# Github-Finder Project: 
 
--  It's a react project to find and show Github profile of users.
+![Github Finder1jpg](https://github.com/user-attachments/assets/11643063-8748-4862-9fc4-56c266458b48)  
 
-## Made this React Project Using Vite + Tailwind + DaisyUI:
-
-### Available Scripts
-
-#### `npm run dev`
-
--  Runs the app in the development mode.
-
-#### `npm run build`
-
--  Builds the app for Production
+https://github.com/user-attachments/assets/36855ce4-da64-4fee-9260-0201552558a0
 
 ## Flow Of Creation of GithubFinder App:
 
